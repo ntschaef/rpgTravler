@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" 
+    android:background="@android:color/darker_gray">
+
+    <TextView
+        android:id="@+id/pwcctitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Choose the priority of your attributes. The most important ones first. This will determine which score is the highest."
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/pwcctextstr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/pwcctitle"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="16dp"
+        android:text="STR"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <Button
+        android:id="@+id/pwccbutstr"
+        android:tag="STR"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="25dp"
+        android:layout_below="@+id/pwcctextstr"
+        android:text="Click Me!" />
+
+        <TextView
+        android:id="@+id/pwcctextdex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/pwcctextstr"
+        android:layout_alignBottom="@+id/pwcctextstr"
+        android:layout_centerHorizontal="true"
+        android:text="DEX"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+    
+    <Button
+        android:id="@+id/pwccbutdex"
+        android:tag="DEX"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/pwccbutstr"
+        android:layout_alignBottom="@+id/pwccbutstr"
+        android:layout_centerHorizontal="true"
+        android:text="Click Me!" />
+    
+    <TextView
+        android:id="@+id/pwcctextcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/pwcctitle"
+        android:layout_marginRight="48dp"
+        android:layout_marginTop="16dp"
+        android:text="CON"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <Button
+        android:id="@+id/pwccbutcon"
+        android:tag="CON"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="25dp"
+        android:layout_below="@+id/pwcctextcon"
+        android:text="Click Me!" />
+
+    <TextView
+        android:id="@+id/pwcctextint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pwccbutstr"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="5dp"
+        android:text="INT"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <Button
+        android:id="@+id/pwccbutint"
+        android:tag="INT"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="25dp"
+        android:layout_below="@+id/pwcctextint"
+        android:text="Click Me!" />
+
+    <TextView
+        android:id="@+id/pwcctextwis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/pwcctextint"
+        android:layout_alignBottom="@+id/pwcctextint"
+        android:layout_centerHorizontal="true"
+        android:text="WIS"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+    
+    <Button
+        android:id="@+id/pwccbutwis"
+        android:tag="WIS"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/pwccbutint"
+        android:layout_alignBottom="@+id/pwccbutint"
+        android:layout_centerHorizontal="true"
+        android:text="Click Me!" />
+    
+    <TextView
+        android:id="@+id/pwcctextcha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/pwccbutcon"
+        android:layout_marginRight="48dp"
+        android:layout_marginTop="5dp"
+        android:text="CHA"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <Button
+        android:id="@+id/pwccbutcha"        
+        android:tag="CHA"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="25dp"
+        android:layout_below="@+id/pwcctextcha"
+        android:text="Click Me!" />
+
+</RelativeLayout>

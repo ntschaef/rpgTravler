@@ -1,0 +1,46 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+   	xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+    	android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	tools:context=".LogonMaster"
+    	android:orientation="vertical" >
+		<TextView
+			android:id="@+id/a21_tvName"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Character Name:"
+			android:textSize="15dp"
+			android:layout_alignParentTop="true"
+			android:layout_alignParentLeft="true"
+			android:layout_marginTop="12dp"
+			android:layout_marginLeft="15dp"/>
+		<EditText
+			android:id="@+id/a21_etName"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_toRightOf="@id/a21_tvName"
+			android:layout_marginLeft="15dp"
+			android:textSize="10dp"/>
+		<RelativeLayout
+			android:id="@+id/a21_rlMain"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/a21_tvName"/>
+		<Button
+			android:id="@+id/a21_bSave"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/a21_rlMain"
+			android:layout_alignParentRight="true"
+			android:text="Save Character"
+			android:textSize="12dp"
+			android:minHeight="0dp"
+			android:minWidth="0dp"/>
+	</RelativeLayout>
+</ScrollView>
+

@@ -1,0 +1,86 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" 
+    android:background="@android:color/background_light">
+
+ <LinearLayout 
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:orientation="vertical" 
+     android:layout_margin="1dp"
+     android:background="@android:color/darker_gray">
+     
+   	<TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Would you like to accept the new scores below?"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+     
+ 	<TextView
+    	android:id="@+id/checkSTR"
+    	android:layout_marginTop="5pt"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+        android:layout_gravity="center"
+    	android:textAppearance="?android:attr/textAppearanceMedium" />
+
+ 	<TextView
+    	android:id="@+id/checkDEX"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+        android:layout_gravity="center"
+    	android:textAppearance="?android:attr/textAppearanceMedium" />
+ 	 
+ 	<TextView
+    	android:id="@+id/checkCON"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+        android:layout_gravity="center"
+    	android:textAppearance="?android:attr/textAppearanceMedium" />
+ 	
+ 	<TextView
+    	android:id="@+id/checkINT"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+        android:layout_gravity="center"
+    	android:textAppearance="?android:attr/textAppearanceMedium" />
+ 	
+ 	<TextView
+    	android:id="@+id/checkWIS"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+        android:layout_gravity="center"
+    	android:textAppearance="?android:attr/textAppearanceMedium" /> 	
+    	
+ 	<TextView
+    	android:id="@+id/checkCHA"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+        android:layout_gravity="center"
+    	android:textAppearance="?android:attr/textAppearanceMedium" />
+ 	    
+ 	    <Button
+        	android:id="@+id/checkButNo"
+        	style="?android:attr/buttonStyleSmall"
+        	android:layout_gravity="center"
+        	android:layout_marginTop="5pt"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_weight="1"
+        	android:text="No - I don't want the new scores" />
+ 	    
+ 	 	<Button
+        	android:id="@+id/checkButYes"
+        	style="?android:attr/buttonStyleSmall"
+        	android:layout_gravity="center"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="Yes - These are fantastic!" /> 
+ 	
+ </LinearLayout>
+
+</LinearLayout>
+
+

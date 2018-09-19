@@ -1,0 +1,56 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/a20_rlBase"	
+   	android:layout_width="match_parent"
+   	android:layout_height="match_parent"
+	android:background="#000000">
+ 	    
+   	<RelativeLayout
+		android:id = "@+id/a20_rlBack"    
+    	android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	android:background="#AA000000" >
+	</RelativeLayout>	
+   	<RelativeLayout
+		android:id = "@+id/a20_rlMap"    
+    	android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	android:background="#000000" >
+	</RelativeLayout>	
+    <Button
+   	   	android:id="@+id/a20_bMenu"
+	    android:layout_width="wrap_content"
+   	    android:layout_height="wrap_content"
+   	   	android:layout_alignParentRight="true"
+	    android:layout_alignParentTop="true"
+	    android:layout_marginTop = "15pt"
+	    android:layout_marginRight="15pt"
+      	android:minHeight="0pt"
+      	android:minWidth="0pt"
+     	android:background="@drawable/utility_button" />
+   	<LinearLayout
+   	    android:id = "@+id/a20_llMaster"
+   	    android:layout_width="25dp"
+   	    android:layout_height="match_parent">
+		<LinearLayout 
+		    android:id = "@+id/a20_llLists"
+		    android:layout_width="0pt"
+   	        android:layout_weight="0"
+   	        android:layout_height="match_parent"
+   	        android:orientation="vertical"
+   	        android:background="#44999999">
+		    
+		</LinearLayout>
+   	    <TextView
+   	        android:id="@+id/a20_tvChange"
+   	        android:layout_width="0pt"
+   	        android:layout_weight="1"
+   	        android:layout_height="wrap_content"
+   	        android:layout_gravity="center|right"
+   	        android:background="#44999999"
+   	        android:textColor="#FFFFFFFF"
+   	        android:text="&gt;"
+   	        android:textSize="18pt" />
+"
+   	</LinearLayout>
+</RelativeLayout>

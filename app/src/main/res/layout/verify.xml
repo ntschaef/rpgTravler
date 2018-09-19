@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:orientation="vertical" 
+	android:background="#000000">
+	<LinearLayout 
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:orientation="vertical" 
+		android:layout_gravity="center"
+		android:layout_margin="1dp"
+		android:background="#eeeeee">"
+	
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:text="ARE YOU SURE?"
+			android:textAppearance="?android:attr/textAppearanceLarge" />
+		
+		<TextView
+			android:id = "@+id/tv_verThink"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="5dp"
+			android:gravity="center"
+			android:layout_gravity="center"
+			android:text="Take your time to think about this! Once you this is deleted all dependent information will be removed and lost forever!"
+			android:textAppearance="?android:attr/textAppearanceSmall" />
+		
+		<Button
+			android:id="@+id/ver_bNo"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:text="NO! TAKE ME AWAY FROM THIS MADNESS!" />
+		
+		<Button
+			android:id="@+id/ver_bYes"
+			style="?android:attr/buttonStyleSmall"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:text="Yes, I am sure." />
+	</LinearLayout>
+
+</LinearLayout>

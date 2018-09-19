@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <system
+        name = 'Game'
+        description = 'The category that lists all the playable games'
+        reqtype = 'ALL'>
+        <component
+            name = 'Metadata'
+            description = 'The container that captures the variables needed for the game setup.'
+            reqtype = 'ALL'>
+            <component
+                name='TurnType'
+                description='establishes if players need to wait on tbers before starting their turn.'
+                reqtype='ONE'>
+                <variable
+                    name= 'ordered'
+                    description='players take turns allowing one to react to the one before it.'
+                    scoretype = 'ID'/>
+                <variable
+                    name='simultaneous'
+                    description='all players can move at the same time, allowing quick turns.'
+                    scoretype = 'ID'/>
+            </component>
+            <component
+                name='MapType'
+                description='The details of the map that will be used.'
+                reqtype='ALL'>
+                <component
+                    name='GridType'
+                    description = 'What grid will be used for the game.'
+                    reqtype='ONE'>
+                    <variable
+                        name = 's:Hexagon'
+                        description = 'Using a hexagon grid will focus on space instead of connections.'
+                        scoretype = 'ID'/>
+                    <variable
+                        name = 's:Square'
+                        description = 'Standard square grid.'
+                        scoretype = 'ID'/>
+                    <variable
+                        name = 's:Triangle'
+                        description = 'The triangle grid will focus on connections instead of space.'
+                        scoretype = 'ID'/>
+                </component>
+                <component
+                    name='MeasureType'
+                    description='What measurement style will be used during the game (especially when considering two nonlinear moves).'
+                    reqtype='ONE'>
+                    <variable
+                        name='m:Simple'
+                        description='Every move counts as a full space.  If traveling "diagonally" it will count as a full two moves.'
+                        scoretype = 'ID'/>
+                    <variable
+                        name='m:True'
+                        description='A combined move will only consider stopping points.  If traveling "diagonally" only the endpoints are considered.'
+                        scoretype = 'ID'/>
+                </component>
+                <component
+                    name='PlacementType'
+                    description='Placement of the tokens on the map.'
+                    reqtype='ONE'>
+                    <variable
+                        name='p:Middle'
+                        descrption='the tokens will be shown on the interior of the grid shapes as in chess.'
+                        scoretype = 'ID'/>
+                    <variable
+                        name='p:Intersection'
+                        description='the tokens will be shown on the intersections of the paths.'
+                        scoretype = 'ID'/>
+                </component>
+            </component>
+        </component>
+        <component
+            name = 'Group'
+            description = 'The container that lists the active games.'
+            reqtype = 'NONE'>
+            <component
+                name = 'Party'
+                description = 'The container identifying the available teams'
+                reqtype = 'NONE'>
+                <variable
+                    name = 'no party'
+                    description = 'This is the default group and will (likely) not be used during the game.'
+                    scoretype='ID'/>
+                <component
+                    name = 'Player'
+                    description = 'This contains the players that that are a part of the parties.'
+                    reqtype = 'NONE'>
+                    <variable
+                        name = 'me'
+                        description = 'default profile that will be used with the user of the program.'
+                        scoretype='ID'/>
+                    <component
+                        name = 'Tokens'
+                        description = 'The container that identifies objects in the game.  This includes everything from characters to traps.'
+                        reqtype='NONE'>
+                        <component
+                            name = 'Token Properties'
+                            description = 'This is the container for all the properties associated with the tokens/characters.'
+                            reqtype='ALL'>
+                            <component
+                                name = 'Character Statistics'
+                                description = 'This is the container for all fundamental token variables values.'
+                                reqtype='ALL'/>
+                            <component
+                                name = 'Status'
+                                description = 'This will contain the options of how the token is seen observed by other tokens.'
+                                reqtype='ONE'>
+                                <variable
+                                    name = 'Stable'
+                                    description = 'The token looks unharmed.'
+                                    scoretype='COMP'>
+                                    <link
+                                        name = 'current HP'
+                                        inequality = 'eq'
+                                        score = 'Max HP'/>
+                                </variable>
+                                <variable
+                                    name = 'Gone'
+                                    description = 'The token looks unharmed.'
+                                    scoretype='COMP'>
+                                    <link
+                                        name = 'current HP'
+                                        inequality = 'lt'
+                                        score = '0'/>
+                                </variable>
+                            </component>
+                            <component
+                                name = 'Location'
+                                description = 'Location of character. Map is in (at least) 3 coordinates: x, y, and z.'
+                                reqtype='ALL'>
+                                <variable
+                                    name = 'x-coordinate'
+                                    description = 'This is the x-coordinate.'
+                                    scoretype='VAR'/>
+                                <variable
+                                    name = 'y-coordinate'
+                                    description = 'This is the y-coordinate.'
+                                    scoretype='VAR'/>
+                                <variable
+                                    name = 'z-coordinate'
+                                    description = 'This is the z-coordinate.'
+                                    scoretype='VAR'/>
+                            </component>
+                            <component
+                                name = 'Scores'
+                                description = 'All scores that will be used by a character.'
+                                reqtype='ALL'>
+                                <variable
+                                    name = 'current HP'
+                                    description = 'The driving factor for the status of the token'
+                                    scoretype='VAR'>
+                                </variable>
+                                <variable
+                                    name = 'Max HP'
+                                    description = 'The default Health amount'
+                                    scoretype='VAR'>
+                                </variable>
+                            </component>
+                            <component
+                                name = 'Action'
+                                description = 'The available actions that can be taken by the token.'
+                                reqtype='NONE'>
+                                <component
+                                    name='SubActions'
+                                    description='The group of simple actions that are called.'
+                                    reqtype='NONE'>
+                                    <component
+                                        name='ActionProperties'
+                                        description='The properties that are required to determine how the action is utilized.'
+                                        reqType='ALL'>
+                                        <variable
+                                            name='minDistance'
+                                            description='the shortest distance needed for targeting.'
+                                            scoretype='VAR'/>
+                                        <variable
+                                            name='maxDistance'
+                                            description='The longest distance that the action can be targeted'
+                                            scoretype='VAR'/>
+                                        <variable
+                                            name='width'
+                                            description='The span of space an action can target.'
+                                            scoretype='VAR'/>
+                                        <component
+                                            name='target'
+                                            description='The focus of the action.'
+                                            reqType='ONE'>
+                                            <variable
+                                                name='None'
+                                                description='There is no focus of the action.'
+                                                scoretype='ID'/>
+                                            <variable
+                                                name='Single'
+                                                description='The focus is a single token inside the range.'
+                                                scoretype='ID'/>
+                                            <variable
+                                                name='All'
+                                                description='The focus is a every token inside the range.'
+                                                scoretype='ID'/>
+                                            <variable
+                                                name='Point'
+                                                description='The focus is a single space inside the range.'
+                                                scoretype='ID'/>
+                                        </component>
+                                        <component
+                                            name='Shape'
+                                            description = 'The geometric layout of the action.'
+                                            reqType='ONE'>
+                                            <variable
+                                                name='arch'
+                                                description='this will create a partial ring around the character focus in which the action can happen.'
+                                                socretype='ID'/>
+                                            <variable
+                                                name='line'
+                                                description='this will allow the action to take place anywhere within a line with width and length.'
+                                                scoretype='ID'/>
+                                        </component>
+                                        <component
+                                            name='LinkedAction'
+                                            description='This will indicate if there are additional actions that result with the target becoming the source.'
+                                            reqType='NONE'/>
+                                    </component>
+                                </component>
+                            </component>
+                        </component>
+                    </component>
+                </component>
+            </component>
+        </component>
+    </system>
+</resources>

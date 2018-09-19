@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CCCCCC">
+    <TextView 
+        android:id = "@+id/a10_tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="#777777"
+        android:textSize="20dp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold|italic"
+        android:gravity="center"
+        android:text="Game Creation" />
+    <LinearLayout 
+        android:id="@+id/a10_llBreakdown"
+        android:layout_height="match_parent"
+        android:layout_width="40pt"
+        android:layout_below="@id/a10_tvTitle"
+        android:layout_alignParentRight="true"
+        android:background="#FFFFFF"
+        android:orientation="vertical">
+        <TextView 
+            android:id="@+id/a10_tvBreakdown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="1pt"
+            android:layout_marginRight="1pt"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:gravity="center"
+            android:text="pick a game to change"/>
+        <RelativeLayout 
+            android:layout_width="match_parent"
+            android:layout_height="1pt"
+            android:background="#EEEEEE"/>
+        <ListView 
+            android:id="@+id/a10_lvBreakdown"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"/>
+    </LinearLayout>
+    <HorizontalScrollView
+        android:id="@+id/a10_hsvMap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/a10_tvTitle"
+        android:layout_toLeftOf="@id/a10_llBreakdown"
+        android:layout_marginRight="1pt"
+        android:background="#FFFFFF"
+        android:visibility="gone">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#DDDDDD">
+        	<ListView
+            	android:id="@+id/a10_lvGame"
+            	android:layout_height="wrap_content"
+        	    android:layout_width="0pt"
+        	    android:layout_weight="1"
+        	    android:background="#F3F3F3"/>
+        	<ListView
+        	    android:id="@+id/a10_lvComponent"
+        	    android:layout_height="wrap_content"
+        	    android:layout_width="0pt"
+        	    android:layout_weight="1"
+        	    android:background="#F3F3F3"
+        	    android:layout_marginLeft="1pt"
+        	    android:visibility="gone"/>
+        	<ListView
+        	    android:id="@+id/a10_lvSub"
+        	    android:layout_height="wrap_content"
+        	    android:layout_width="0pt"
+        	    android:layout_weight="1"
+        	    android:background="#F3F3F3"
+        	    android:layout_marginLeft="1pt"
+        	    android:visibility="gone"/>
+        </LinearLayout>
+	</HorizontalScrollView>
+	<RelativeLayout 
+	    android:layout_height="match_parent"
+	    android:layout_width="match_parent"
+	    android:layout_below="@id/a10_hsvMap"
+	    android:layout_toLeftOf="@id/a10_llBreakdown"
+	    android:background="#000000">
+		<ScrollView 
+	    	android:id="@+id/a10_svMain"
+	    	android:layout_height="match_parent"
+	    	android:layout_width="match_parent"
+			android:layout_marginRight="1pt"
+			android:layout_marginTop="1pt"
+	    	android:paddingBottom="1pt"
+	    	android:background="#E1DFEF">
+
+			<RelativeLayout
+			    android:id="@+id/a10_rlMain"
+			    android:layout_width="wrap_content"
+			    android:layout_height="match_parent" >
+				<RelativeLayout
+					android:id="@+id/a10_rlReset"
+					android:layout_height="wrap_content"
+					android:layout_width="match_parent">
+					<Button
+						android:id="@+id/a10_bReset"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:minHeight="0pt"
+						android:minWidth="0pt"
+						android:textSize="12sp"
+						android:text="create a new entry"
+						android:layout_centerHorizontal="true"
+						android:visibility="gone"/>
+				</RelativeLayout>
+   		 	  	<RelativeLayout
+    		  	    android:id="@+id/a10_rlLocal"
+    		  	    android:layout_height="match_parent"
+    		  	    android:layout_width="match_parent"
+					android:layout_below="@id/a10_rlReset">
+    		  	    <LinearLayout
+    		  	        android:id="@+id/a10_llTopLocal"
+    		  	        android:layout_height="wrap_content"
+    		  	        android:layout_width="match_parent"
+    		  	        android:orientation="horizontal"
+						android:layout_alignParentTop="true">
+    		  	    	<TextView
+       				    	android:id="@+id/a10_tvName"
+       				    	android:layout_width="0pt"
+       				    	android:layout_height="wrap_content"
+       				    	android:layout_weight="1"
+       						android:textAppearance="?android:attr/textAppearanceSmall"
+       						android:text="Name:"/>
+       					<EditText
+       					    android:id="@+id/a10_etName"
+       					    android:layout_width="0pt"
+       					    android:layout_height="wrap_content"
+       					    android:layout_weight="2"
+       						android:textAppearance="?android:attr/textAppearanceSmall"/>
+       				</LinearLayout>
+       				<LinearLayout
+    	  	    	    android:id="@+id/a10_llBotLocal"
+    	  	    		android:layout_height="wrap_content"
+    	 	 	        android:layout_width="match_parent"
+    	 	 	        android:orientation="horizontal"
+    	 	 	        android:layout_below="@id/a10_llTopLocal">
+       					<TextView
+       					    android:id="@+id/a10_tvDescription"
+       					    android:layout_width="0pt"
+       					    android:layout_height="wrap_content"
+       					    android:layout_weight="1"
+       						android:textAppearance="?android:attr/textAppearanceSmall"
+       						android:text="Description:"/>
+       					<EditText
+       					    android:id="@+id/a10_etDescription"
+       					    android:layout_width="0pt"
+      					    android:layout_height="wrap_content"
+       					    android:layout_weight="2"
+       						android:textAppearance="?android:attr/textAppearanceSmall"
+       						android:inputType="textMultiLine"/>
+       				</LinearLayout>
+       				<Button 
+       				    android:id="@+id/a10_bStore"
+       				    android:layout_width="wrap_content"
+       				    android:layout_height="wrap_content"
+       				    android:minHeight="0pt"
+       				    android:minWidth="0pt"
+      				    android:textSize="12sp"
+       				    android:text="set game"
+       				    android:layout_below="@id/a10_llBotLocal"
+       				    android:layout_alignParentLeft="true"/>
+       				<Button 
+       				    android:id="@+id/a10_bRemove"
+       				    android:layout_width="wrap_content"
+       				    android:layout_height="wrap_content"
+       				    android:minHeight="0pt"
+       				    android:minWidth="0pt"
+      				    android:textSize="12sp"
+       				    android:text="remove game"
+       				    android:layout_below="@id/a10_llBotLocal"
+       				    android:layout_alignParentRight="true"/>       				      				    "
+       			</RelativeLayout>
+ 	    		<CheckBox 
+ 	    	    	android:id="@+id/a10_cbSetInGame"
+ 	    	    	android:layout_width = "wrap_content"
+ 	    	    	android:layout_height = "wrap_content"
+ 	    	    	android:layout_below="@id/a10_rlLocal"
+ 	    	    	android:layout_alignParentRight="true"
+ 	    	    	android:textSize="12dp"
+ 	    	    	android:text="use in game"
+ 	    	    	android:visibility = "visible"/>
+       			<RelativeLayout 
+	    		    android:id="@+id/a10_rlComp"
+	    		    android:layout_width="match_parent"
+	    			android:layout_height="wrap_content"
+	    	    	android:layout_below="@id/a10_cbSetInGame"
+					android:layout_marginTop="1pt"
+					android:visibility="visible">
+       				<TextView 
+       				    android:id="@+id/a10_tvCompTitle"
+       				    android:layout_width="match_parent"
+       				    android:layout_height="wrap_content"
+						android:textSize="15dp"
+       					android:gravity="center"
+       					android:text="Component Details:"
+       					android:textStyle="bold"
+						android:layout_alignParentTop="true"
+						android:paddingTop="1pt"
+						android:paddingBottom="1pt"
+						android:background="#FFFFFF"/>
+
+					<LinearLayout
+    		  	        android:id="@+id/a10_llCompLink"
+    		  	        android:layout_height="wrap_content"
+    		  	        android:layout_width="match_parent"
+    		  	        android:orientation="vertical"
+       					android:layout_marginTop="2pt"
+    		  	        android:layout_below="@id/a10_tvCompTitle"
+    		  	        android:gravity="center">
+    		  	   		<LinearLayout
+    		  	        	android:layout_height="0pt"
+    		  	        	android:layout_width="match_parent"
+    		  	        	android:orientation="horizontal"
+    		  	        	android:layout_weight="1">
+    		  	        	<TextView 
+    		  	        	    android:layout_width="0pt"
+    		  	        	    android:layout_height="wrap_content"
+    		  	        	    android:layout_weight="1"
+    		  	        	    android:text="Parent:"
+    		  	        	    android:textStyle="bold"
+    		  	        	    android:textSize="12dp"
+    		  	        	    android:gravity="center"/>    
+    		  	        	<RelativeLayout 
+    		  	        	    android:layout_width="0pt"
+    		  	        	    android:layout_height="wrap_content"
+    		  	        	    android:layout_weight="3"
+    		  	        	    android:background="#333333"
+    		  	        	    android:paddingBottom="1dp">    		  	        	    
+	       						<Spinner
+	       						    android:id="@+id/a10_sCompParent"
+	       						    android:layout_width="fill_parent"
+	       						    android:layout_height="wrap_content"
+	       						    android:layout_margin="1dp"
+	       						    android:background="#D9CBE7" />
+       						</RelativeLayout>
+       					</LinearLayout>
+	   		  	   		<LinearLayout
+    		  	        	android:layout_height="0pt"
+    		  	        	android:layout_width="match_parent"
+    		  	        	android:orientation="horizontal"
+    		  	        	android:layout_weight="1">
+	   		  	        	<TextView 
+	   		  	        	    android:layout_width="0pt"
+	   		  	        	    android:layout_height="wrap_content"
+	   		  	        	    android:layout_weight="1"
+    		  	        	    android:textStyle="bold"
+	   		  	        	    android:text="Type:"
+	   		  	        	    android:textSize="12dp"
+	   		  	        	    android:gravity="center"/>
+   							<RelativeLayout 	
+   							    android:id="@+id/a10_rlCompType"
+   							    android:layout_height="wrap_content"
+   					    		android:layout_width="0pt"
+   					    		android:layout_weight="3"
+   					    		android:layout_marginTop="2pt"
+    		  	        	    android:background="#333333"
+    		  	        	    android:padding="1dp"> 
+	   							<Spinner 
+								    android:id="@+id/a10_sCompType"			    
+								    android:layout_height="wrap_content"
+						    		android:layout_width="match_parent"
+						   			android:layout_alignParentTop="true"
+									android:layout_alignParentRight="true"
+									android:background="#D9CBE7"/>	
+       						</RelativeLayout>
+       					</LinearLayout>
+       					<LinearLayout 
+       					    android:layout_width="match_parent"
+       					    android:layout_height="wrap_content"
+       					    android:layout_marginTop="2pt"
+       					    android:orientation="horizontal">
+
+       						<RadioGroup
+       						    android:id="@+id/a10_rgReq"
+       						    android:layout_width="wrap_content"
+       						    android:layout_height="wrap_content"
+       						    android:layout_weight="3" >
+
+       						    <RadioButton 
+       						        android:id="@+id/a10_rbReqNo"
+       						        android:layout_width="wrap_content"
+       						        android:layout_height="wrap_content"
+       						        android:text="Items are optional for parents"
+       						        android:textAppearance="?android:attr/textAppearanceSmall"/>
+       						    <RadioButton 
+       						        android:id="@+id/a10_rbReqYes"
+       						        android:layout_width="wrap_content"
+       						        android:layout_height="wrap_content"
+       						        android:text="All items are required for every parent"
+       						        android:layout_marginTop="2pt"
+       						        android:textAppearance="?android:attr/textAppearanceSmall"/>
+       						    <RadioButton 
+       						        android:id="@+id/a10_rbReq1"
+       						        android:layout_width="wrap_content"
+       						        android:layout_height="wrap_content"
+       						        android:text="Only one item is required for each parent"
+       						        android:layout_marginTop="2pt"
+       						        android:textAppearance="?android:attr/textAppearanceSmall"/>
+       						</RadioGroup>
+							<RelativeLayout 
+						    	android:layout_height="wrap_content"
+						    	android:layout_width="wrap_content"
+						    	android:layout_weight="4"
+						    	android:layout_marginLeft="2pt">
+       							<CheckBox
+		   		  	   			    android:id="@+id/a10_cbAction"
+		   		  	   			    android:layout_width="wrap_content"
+		   		  	   			    android:layout_height="wrap_content"
+		   		  	   			    android:layout_marginTop="-8dp"
+		   		  	   			    android:layout_alignParentTop="true"
+		   		  	   			    android:text="action?"
+		   		  	   			    android:textSize="12dp" />
+       							<CheckBox
+       							    android:id="@+id/a10_cbSame"
+       							    android:layout_width="match_parent"
+       							    android:layout_height="match_parent"
+       							    android:layout_below="@id/a10_cbAction"
+       							    android:textSize = "12dp"
+       							    android:text="All scores the same"/>
+       							<EditText
+       							    android:id="@+id/a10_etCompScore"
+       							    android:layout_width="match_parent"
+       							    android:layout_height="match_parent"
+       							    android:layout_below="@id/a10_cbSame"
+       							    android:textSize = "12dp"
+       							    android:inputType="number"/>
+       							<Button
+		  						    android:id="@+id/a10_bCompOrderUp"
+		  						    android:layout_width="wrap_content"
+		  						    android:layout_height="match_parent"
+									android:layout_below="@id/a10_etCompScore"
+	   							    android:text="position up"
+									android:minWidth="0pt"
+									android:minHeight="0pt"
+	   							    android:paddingTop="1dp"
+	   							    android:paddingBottom = "1dp"
+									android:textSize = "12dp"/>
+      							<Button
+       							    android:id="@+id/a10_bCompGameChange"
+       							    android:layout_height="wrap_content"
+       							    android:layout_width="wrap_content"
+									android:layout_below="@id/a10_bCompOrderUp"
+									android:layout_alignParentRight="true"
+									android:minWidth="0pt"
+									android:minHeight="0pt"
+									android:text="save changes"
+									android:textSize="12sp"/>							
+       						</RelativeLayout>
+	       				</LinearLayout>
+					</LinearLayout>
+				</RelativeLayout>
+	    		<RelativeLayout 
+	    		    android:id="@+id/a10_rlElement"
+	    		    android:layout_width="match_parent"
+	    			android:layout_height="wrap_content"
+	    	    	android:layout_below="@id/a10_cbSetInGame"
+					android:layout_marginTop="1pt"
+					android:visibility= "gone">
+		    		<Button
+					    android:id="@+id/a10_bElOrderUp"
+					    android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+						android:layout_alignParentTop = "true"
+						android:layout_alignParentRight = "true"
+						android:text="position up"
+						android:minWidth="0pt"
+						android:minHeight="0pt"
+						android:paddingTop="1dp"
+						android:paddingBottom = "1dp"
+						android:textSize = "12dp"/>
+					<CheckBox
+						android:id="@+id/a10_cbEditable"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_below="@id/a10_bElOrderUp"
+						android:layout_centerHorizontal="true"
+						android:text="this element cannot be altered by players"
+						android:layout_alignParentLeft="true"
+						android:textSize="10dp"
+						android:layout_marginTop = "-6dp"
+						android:layout_marginBottom = "-6dp"/>
+					<CheckBox
+						android:id="@+id/a10_cbHidden"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_below="@id/a10_cbEditable"
+						android:layout_alignParentLeft="true"
+						android:text="Hidden from the player"
+						android:textSize="10dp"
+						android:layout_marginTop = "-6dp"/>
+					<RelativeLayout
+       				    android:id="@+id/a10_rlScores"
+       				    android:layout_width="match_parent"
+       				    android:layout_height="wrap_content"
+       				    android:layout_below="@id/a10_cbHidden"/>
+       				<RelativeLayout 
+       				    android:id="@+id/a10_rlElInsructions"
+       				    android:layout_width="match_parent"
+       				    android:layout_height="wrap_content"
+       				    android:layout_below="@id/a10_rlScores">
+	   		 	    	<TextView 
+   			 	    	    android:id="@+id/a10_tvElInsructions"
+   			 	    	    android:layout_width="match_parent"
+   		 		    	    android:layout_height="wrap_content"
+   		 	    		    android:layout_alignParentTop="true"
+   		 	    		    android:textSize="10dp"
+   		 	    		    android:text="Formatting: \n
+-- ##D## Example:
+   02D06 -> score is calculated by 2 6-sided die.\n
+-- ##of##D## Example:
+   03of05D08 -> score is calculated by rolling
+   5 8-sided die and choosing the highest 3"/>
+	   		 	    </RelativeLayout>
+    	   			<RelativeLayout 
+       				    android:id="@+id/a10_rlInherited"
+       				    android:layout_width="match_parent"
+       				    android:layout_height="wrap_content"
+       				    android:layout_below="@id/a10_rlElInsructions">
+       				</RelativeLayout>
+       				<RelativeLayout 
+       				    android:id="@+id/a10_rlOptional"
+       				    android:layout_width="match_parent"
+       				    android:layout_height="wrap_content"
+       				    android:layout_below="@id/a10_rlInherited">
+       				</RelativeLayout>
+		    		<RelativeLayout 
+    	   			    android:id="@+id/a10_rlPrereq"
+       				    android:layout_width="match_parent"
+       				    android:layout_height="wrap_content"
+       				    android:layout_below="@id/a10_rlOptional">
+       				</RelativeLayout>
+					<RelativeLayout
+						android:id="@+id/a10_rlRestric"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_below="@id/a10_rlPrereq">
+					</RelativeLayout>
+				</RelativeLayout>
+		    	<Button
+		 			android:id="@+id/a10_bNext"
+		  			android:layout_width="wrap_content"
+			   		android:layout_height="wrap_content"
+			   		android:layout_alignParentRight="true"
+			   		android:layout_below="@id/a10_rlLocal"
+			   		android:minHeight="0pt"
+			   		android:minWidth="0pt"
+			   		android:text="Focus on the Game"
+			   		android:textSize="12sp"
+					android:visibility="gone"/>
+    		</RelativeLayout>			
+		</ScrollView>
+	</RelativeLayout>
+</RelativeLayout>
