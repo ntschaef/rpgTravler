@@ -53,12 +53,12 @@ public class Act00LogonMaster extends Activity {
         metadata = getSharedPreferences("metadata", 0);
         editor = metadata.edit();
         rlLogon = (RelativeLayout) findViewById(R.id.a00_rlLogon);
-//        tvDescription;
-//        rgMasterType;
-//        rbGM;
-//        rbPlayer;
-//        rlSearch;
-//        tvSearch;
+        tvDescription = (TextView) findViewById(R.id.a00_tvDescription);
+        rgMasterType = (RadioGroup) findViewById(R.id.a00_rgMasterType);
+        rbGM = (RadioButton) findViewById(R.id.a00_rbGM);
+        rbPlayer = (RadioButton) findViewById(R.id.a00_rbPlayer);
+        rlSearch = (RelativeLayout) findViewById(R.id.a00_rlSearch);
+        tvSearch = (TextView);
 //        llMain;
 //        llTop;
 //        rlTop;
